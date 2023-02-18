@@ -3,6 +3,17 @@ import './lib/dayjs'
 import { Header } from './components/Header';
 import { SummaryTable } from './components/SummaryTable';
 
+// --- Notificação local ---
+// window.Notification.requestPermission(permission => {
+//   if(permission === 'granted') {
+//     new window.Notification('Lembrete', {
+//       body: 'Conclua todos os seus compromissos de hoje.',
+
+//     })
+//   }
+// })
+navigator.serviceWorker.register('service-worker.js')
+
 export function App() {
   return (
     <div className='w-screen h-screen flex justify-center items-center'>
