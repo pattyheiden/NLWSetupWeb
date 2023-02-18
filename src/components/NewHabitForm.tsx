@@ -22,8 +22,10 @@ export function NewHabitForm() {
         if(!title || weekDays.length === 0) {
             return
         }
+        const email = "patriciasilvalimah@gmail.com"
         await api.post('habits', {
             title,
+            email,
             weekDays,
         })
         setTitle('')
