@@ -20,10 +20,12 @@ interface HabitsInfo {
 
 export function HabitsList({ date, onCompletedChanged }: HabitsListProps) {
     const [habitsInfo, setHabitsInfo] = useState<HabitsInfo>()
+    const email = "patriciasilvalimah@gmail.com"
     useEffect(() => {
         api.get('day', {
             params: {
                 date: date.toISOString(),
+                email: email
             }
         }).then(response => {
             setHabitsInfo(response.data)

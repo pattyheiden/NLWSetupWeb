@@ -22,9 +22,14 @@ type Summary = {
 
 export function SummaryTable() {
     const[summary, setSummary] = useState<Summary>([])
+    const email = "patriciasilvalimah@gmail.com"
 
     useEffect(() => {
-        api.get('summary').then(response => {
+        api.get('summary', {
+            params: {
+                email
+            }
+        }).then(response => {
             setSummary(response.data)
         })
     }, [])
